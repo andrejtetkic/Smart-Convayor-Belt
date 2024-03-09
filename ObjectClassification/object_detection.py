@@ -40,6 +40,8 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
                     cv2.rectangle(result,(x,y),(x+w,y+h),(0,255,0),2)
                     
                     if count_rect[0][0] <= x <= count_rect[1][0] and count_rect[0][1] <= y <= count_rect[1][1] and not in_last:
+                        utilities.predictionHandler(i)
+
                         count[i] += 1
                         utilities.printState(count)
                         in_last = True

@@ -1,13 +1,15 @@
 import RPi.GPIO as GPIO
 from time import sleep
+from .predefined_positions import PIN
 
 class ServoController:
-    def __init__(self, pin):
+    @staticmethod
+    def __init__(self):
         """
         Initialize the ServoController with the specified GPIO pin.
         :param pin: GPIO pin number (BCM mode)
         """
-        self.pin = pin
+        self.pin = PIN
         GPIO.setmode(GPIO.BCM)
         GPIO.setup(self.pin, GPIO.OUT)
         self.servo_pwm = GPIO.PWM(self.pin, 50)  # 50 Hz frequency for servo control
@@ -33,15 +35,12 @@ class ServoController:
 # Example usage
 if __name__ == "__main__":
     try:
-        servo_pin = 17 
-        my_servo = ServoController(servo_pin)
-
         # Move servo to different angles
-        my_servo.set_angle(90)  # Center position
+        ServoController.set_angle(90)  # Center position
         sleep(1)
-        my_servo.set_angle(0)   # Leftmost position
+        ServoController.set_angle(0)   # Leftmost position
         sleep(1)
-        my_servo.set_angle(180)  # Rightmost position
+        ServoController.set_angle(180)  # Rightmost position
         sleep(1)
     except KeyboardInterrupt:
-        my_servo.cleanup()  # Release GPIO resources
+        ServoController.cleanup()  # Release GPIO resources
