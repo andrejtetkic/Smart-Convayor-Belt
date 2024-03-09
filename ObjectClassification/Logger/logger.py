@@ -11,6 +11,7 @@ class PredictionLogger:
         logging.basicConfig(filename=LOG_FILE, level=logging.INFO)
         logging.info(f'Prediction: {prediction}; Time: {datetime.datetime.now().strftime("%I:%M%p, %B %d, %Y")}')
 
+    @staticmethod
     def update_count(prediction):
         try:
             with open(COUNT_FILE, 'r') as file:
