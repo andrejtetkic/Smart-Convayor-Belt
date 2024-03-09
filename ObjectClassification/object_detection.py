@@ -24,7 +24,7 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
     while True:
         ret, frame = cap.read()
 
-        contour, sides = detection_methodes.shapes(frame, 80, 0.02)
+        contour, sides = detection_methodes.shapes(frame, 120, 0.02)
 
         if contour is not None:
             nb = black_image.copy()

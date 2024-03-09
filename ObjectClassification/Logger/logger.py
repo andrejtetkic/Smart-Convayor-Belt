@@ -2,8 +2,8 @@ import datetime
 import logging
 import json
 
-LOG_FILE = 'ObjectClassification/Logger/log.txt'
-COUNT_FILE = 'ObjectClassification/Logger/logcount.json'
+LOG_FILE = 'Logger/log.txt'
+COUNT_FILE = 'Logger/logcount.json'
 
 class PredictionLogger:
     @staticmethod

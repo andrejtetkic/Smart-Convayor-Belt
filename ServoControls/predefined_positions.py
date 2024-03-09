@@ -1,2 +1,2 @@
 POSITIONS = [45, 90, 135] # 0-180 degrees
-PIN = 12
+PIN = 17
