@@ -1,1 +1,2 @@
-FlaskSajt/env
+FlaskSajt/
+__pycache__/
