@@ -10,13 +10,15 @@
     <div class="container">
         <div class="traka">
             <h1>Traka 1</h1>
-            <label for="upload"></label>
-            <input type="file" id="file1" name="upload">
+            <form action = "/success" method = "post" enctype="multipart/form-data">   
+                <input type="file" name="file"/>
+                <input type="submit" value="Upload"/>   
+            </form> 
             <span id="traka1"></span>
             <form method="Post">
             <label for="model1">Izaberite model</label>
             <select name="model1" id="model1">
-                <option value="1">Model 1</option>
+                <option value="1">{{name}}</option>
                 <option value="2">Model 2</option>
                 <option value="3">Model 3</option>
             </select>
