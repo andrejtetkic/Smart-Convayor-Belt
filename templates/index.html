@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="settings">
-            <span id="counterAll">155</span>
+            <span id="counterAll">Ukupan broj: 155</span>
             <div class="sortingSettings">
                 <button type="button">Boje i oblik</button>
                 <button type="button">Model</button>
@@ -27,14 +27,56 @@
                 <div class="rangeContainer">
                     <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
                 </div>
+                <div class="shapeContainer">
+                    <span>Broj stranica</span>
+                    <input type="range" class="shapeNumber" list="markers1">
+                    <datalist id="markers1">
+                        <option value="0" label="3"></option>
+                        <option value="25" label="4"></option>
+                        <option value="50" label="5"></option>
+                        <option value="75" label="6"></option>
+                        <option value="100" label="7"></option>
+                    </datalist>
+                    <div class="imgContainer"><img src="https://cdn1.iconfinder.com/data/icons/shapes-102/24/_five_side-512.png" alt=""></div>
+                </div>
             </div>
             <div class="direction" id="directionStraight">
                 <h1>Pravo</h1>
                 <span class="counter" id="counterStraight">10</span>
+                <div class="rangeContainer">
+                    <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
+                </div>
+                <div class="shapeContainer">
+                    <span>Broj stranica</span>
+                    <input type="range" class="shapeNumber" list="markers2">
+                    <datalist id="markers2">
+                        <option value="0" label="3"></option>
+                        <option value="25" label="4"></option>
+                        <option value="50" label="5"></option>
+                        <option value="75" label="6"></option>
+                        <option value="100" label="7"></option>
+                    </datalist>
+                    <div class="imgContainer"><img src="https://pluspng.com/img-png/triangle-png-triangle-stroke-png-512.png" alt=""></div>
+                </div>
             </div>
             <div class="direction" id="directionRight">
                 <h1>Desno</h1>
                 <span class="counter" id="counterRight">10</span>
+                <div class="rangeContainer">
+                    <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
+                </div>
+                <div class="shapeContainer">
+                    <span>Broj stranica</span>
+                    <input type="range" class="shapeNumber" list="markers3">
+                    <datalist id="markers3">
+                        <option value="0" label="3"></option>
+                        <option value="25" label="4"></option>
+                        <option value="50" label="5"></option>
+                        <option value="75" label="6"></option>
+                        <option value="100" label="7"></option>
+                    </datalist>
+                    <div class="imgContainer"><img src="https://pngimg.com/uploads/square/square_PNG19.png" alt=""></div>
+                </div>
             </div>
         </div>
     </div>

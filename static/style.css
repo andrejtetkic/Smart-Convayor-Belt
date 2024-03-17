@@ -65,20 +65,22 @@
 }
 
 .slider{
+    background-color: lightblue;
+    width: 80%;
     appearance: none;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;
-    background: linear-gradient(to right, red, yellow);
+    background: linear-gradient(to right, rgb(255,0,0), rgb(255,255,0), rgb(0,255,0),rgb(0,255,255),rgb(0,0,255),rgb(255,0,255),rgb(255,0,0));
 }
 
 /* slider thumb, should be a line */
 .slider::-webkit-slider-thumb{
     appearance: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    background-color: #194679;
+    width: 2px;
+    height: 35px;
+    border-radius: 25px;
+    background-color: #000000;
     cursor: pointer;
 }
 
@@ -141,4 +143,31 @@
     background-color: #fff;
     pointer-events: auto;
     -moz-appearance: none;
+  }
+
+
+
+datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    width: 98.5%;
+  }
+  
+  option {
+    padding: 0;
+  }
+
+  .shapeContainer{
+    display: flex;
+    flex-direction: column;
+  }
+  .imgContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  img{
+    width: 50%;
   }
