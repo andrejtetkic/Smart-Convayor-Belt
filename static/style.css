@@ -1,7 +1,7 @@
 *{
     margin: 0;
 }
-.container{
+.wrapper{
     width: 100%;
     margin: 0 auto;
     padding: 0;
@@ -12,39 +12,60 @@
     background-color: #194679;
     height: 100vh;
 }
-.traka{
-    width: 100%;
-    height: 100%;
-    padding: 25px;
+
+.conveyor{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.settings{
+    border: 1px solid #e1e9f6;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.conveyor .direction{
+    border: 1px solid #e1e9f6;
+    width: calc(100%/3);
+    height: 100vh;
     text-align: center;
 }
-select{
-    width: 100%;
-    padding: 10px;
-    margin: 10px 0;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    background-color: #fff;
+
+.conveyor .direction .counter{
+    font-size: 25px;
 }
-option{
-    padding: 10px;
-    font-size: 15px;
-    
+.wrapper .settings .sortingSettings{
+    display: flex;
+    flex-direction: column;
 }
-label{
-    font-size: 20px;
-    font-weight: bold;
+
+#counterAll{
+    height: 50%;
+    position: relative;
+    font-size: 25px;
+    margin-bottom: 10px;
+
 }
+
+
+
 /* single range slider */
 .rangeContainer{
     width: 100%;
-    padding: 25px;
     text-align: center;
 }
 
 .slider{
     appearance: none;
-    width: 100%;
     padding: 10px;
     margin: 10px 0;
     border-radius: 5px;

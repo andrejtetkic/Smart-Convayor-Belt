@@ -13,7 +13,7 @@ def success():
         f = request.files['file']
         session['filen'] = f.filename
         f.save(f.filename)
-        render_template('index.html', name = f.filename)
+        #render_template('index.html', name = f.filename)
         return "file uploaded successfully"
 
 if __name__=='__main__':
