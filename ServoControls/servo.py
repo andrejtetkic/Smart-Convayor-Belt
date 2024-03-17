@@ -4,6 +4,7 @@ from .predefined_positions import PIN
 
 class ServoController:
 
+    GPIO.cleanup()
     pin = PIN
     GPIO.setmode(GPIO.BCM)
     GPIO.setup(pin, GPIO.OUT)
@@ -19,7 +20,10 @@ class ServoController:
         duty_cycle = (angle / 18) + 2  # Convert angle to duty cycle (2% to 12%)
         ServoController.servo_pwm.ChangeDutyCycle(duty_cycle)
         sleep(0.5)  # Allow time for servo to move
+        GPIO.output(ServoController.pin, False)
+        ServoController.servo_pwm.ChangeDutyCycle(duty_cycle)
 
+    @staticmethod
     def cleanup():
         """
         Clean up GPIO resources when done.
