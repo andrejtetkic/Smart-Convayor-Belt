@@ -1,6 +1,6 @@
 import cv2
-import detection_methodes
-import utilities
+from . import detection_methodes
+from . import utilities
 import numpy as np
 from ..ServoControls.servo import ServoController
 

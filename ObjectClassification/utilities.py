@@ -1,4 +1,4 @@
-from Logger.logger import PredictionLogger
+from .Logger.logger import PredictionLogger
 
 import sys
 import os
