@@ -4,13 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-    <script src="script.js"></script>
+    <script src="/templates/script.js"></script>
     <title>Pokretna traka</title>
 </head>
 <body>
     <div class="wrapper">
         <div class="settings">
-            <span id="counterAll">Ukupan broj: 155</span>
+            <span id="counterAll">Ukupan broj <br></broj:br><span id="largeNum">155</span></span>
             <div class="sortingSettings">
                 <button type="button">Boje i oblik</button>
                 <button type="button">Model</button>
@@ -23,13 +23,17 @@
         <div class="conveyor">
             <div class="direction" id="directionLeft">
                 <h1>Levo</h1>
-                <span class="counter" id="counterLeft">10</span>
+                <span class="counter" id="counterLeft">50</span>
                 <div class="rangeContainer">
-                    <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
+                    <section class="range-slider">
+                        <span class="rangeValues"></span>
+                        <input value="5" min="0" max="15" step="0.5" type="range" class="slider">
+                        <input value="10" min="0" max="15" step="0.5" type="range" class="slider">
+                    </section>
                 </div>
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
-                    <input type="range" class="shapeNumber" list="markers1">
+                    <input type="range" class="shapeNumber" list="markers1"><!-- nek bude do 6 -->
                     <datalist id="markers1">
                         <option value="0" label="3"></option>
                         <option value="25" label="4"></option>
@@ -42,7 +46,7 @@
             </div>
             <div class="direction" id="directionStraight">
                 <h1>Pravo</h1>
-                <span class="counter" id="counterStraight">10</span>
+                <span class="counter" id="counterStraight">95</span>
                 <div class="rangeContainer">
                     <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
                 </div>
@@ -83,7 +87,7 @@
     </div>
     <div class="container">
         <!-- Double slider(not working as intended) -->
-        <!-- <div class="range">
+        <div class="range">
             <div class="range-slider">
                 <span class="range-selected"></span>
               </div>
@@ -91,8 +95,12 @@
                 <input type="range" class="min" min="0" max="1000" value="300" step="10">
                 <input type="range" class="max" min="0" max="1000" value="700" step="10">
             </div>
-        </div> -->
+        </div>
+        <section class="range-slider">
+            <span class="rangeValues"></span>
+            <input value="5" min="0" max="15" step="0.5" type="range" class="slider">
+            <input value="10" min="0" max="15" step="0.5" type="range" class="slider">
+        </section>
     </div>
-    
 </body>
 </html>
