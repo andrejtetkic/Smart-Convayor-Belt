@@ -2,7 +2,7 @@ import cv2
 from . import detection_methodes
 from . import utilities
 import numpy as np
-from ..ServoControls.servo import ServoController
+from ..ServoControls import servo 
 
 
 def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[tuple], cap: cv2.VideoCapture) -> int:
@@ -63,7 +63,7 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
             in_last = False
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
-            ServoController.cleanup()
+            servo.cleanup()
             break
 
     cap.release()

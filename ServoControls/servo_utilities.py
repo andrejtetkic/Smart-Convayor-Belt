@@ -1,5 +1,5 @@
 from . import predefined_positions
-from .servo import ServoController
+from . import servo
 
 def servoHandler(prediction):
-    ServoController.set_angle(predefined_positions.POSITIONS[prediction])
+    servo.set_angle(predefined_positions.POSITIONS[prediction])
