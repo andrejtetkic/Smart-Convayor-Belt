@@ -3,7 +3,7 @@ import time
 
 GPIO.setmode(GPIO.BOARD)
 
-ControlPin = [12, 16, 20, 21]
+ControlPin = [7,11,13,15]
 
 for pin in ControlPin:
     GPIO.setup(pin,GPIO.OUT)
@@ -25,4 +25,4 @@ for i in range(512):
         time.sleep(0.001)
 
 
-GPIO.cleanup()
+GPIO.cleanup(0)
