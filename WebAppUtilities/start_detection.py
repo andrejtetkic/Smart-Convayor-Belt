@@ -1,5 +1,5 @@
 from multiprocessing import Process
-from .ObjectClassification.object_detection import RGB_and_Sides_classification
+from ..ObjectClassification.object_detection import RGB_and_Sides_classification
 
 process = None
 
