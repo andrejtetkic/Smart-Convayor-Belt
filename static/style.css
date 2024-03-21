@@ -1,0 +1,293 @@
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#largeNum{
+    font-size: 155px;
+    text-shadow: 1px 1px 1px #000;
+
+}
+.wrapper{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-color: #E4E5F1;
+    height: 100vh;
+}
+
+.conveyor{
+    width: 75%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.settings{
+    background-color: #D2D3DB;
+    border: 1px solid #9394A5;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+
+}
+
+.conveyor .direction{
+    border: 1px solid #9394A5;
+    width: calc(100%/3);
+    height: 100vh;
+    text-align: center;
+}
+span.counter{
+  font-size: 155px;
+  text-shadow: 1px 1px 1px #000;
+}
+.conveyor .direction .counter{
+    font-size: 50px;
+    margin: 5px;
+}
+
+.wrapper .settings .sortingSettings{
+    display: flex;
+    flex-direction: column;
+}
+
+.sortingSettings{
+  width: 90%;
+}
+
+.sortingSettings button{
+  height: 50px;
+  margin: 5px;
+  background-color: #9394A5;
+  color: white;
+  border: none;
+  border-radius: 7px;
+}
+
+.sortingSettings button:hover {
+    
+    cursor: pointer;
+    animation: hoverAnimation 0.3s ease-in-out;
+    background-color: #6E6F7F;
+  }
+
+  @keyframes hoverAnimation {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.001);
+      background-color: #6E6F7F;
+    }
+    
+  }
+
+
+
+#counterAll{
+    height: 50%;
+    position: relative;
+    font-size: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+
+/* single range slider */
+.rangeContainer{
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+}
+
+.slider{
+    background-color: lightblue;
+    width: 80%;
+    appearance: none;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: linear-gradient(to right, rgb(255,0,0), rgb(255,255,0), rgb(0,255,0),rgb(0,255,255),rgb(0,0,255),rgb(255,0,255),rgb(255,0,0));
+}
+
+/* slider thumb, should be a line */
+.slider::-webkit-slider-thumb{
+    appearance: none;
+    border: 2px solid #E4E5F1;
+    color: transparent;
+    width: 4px;
+    height: 65px;
+    border-radius: 25px;
+    
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Double slider style */
+.range{
+    width: 100%;
+    padding: 25px;
+    text-align: center;
+
+}
+
+/* .range-slider {
+    height: 5px;
+    position: relative;
+    background-color: #e1e9f6;
+    border-radius: 2px;
+  }
+  .range-selected {
+    height: 100%;
+    left: 30%;
+    right: 30%;
+    position: absolute;
+    border-radius: 5px;
+    background-color: #1b53c0;
+  }
+
+  .range-input {
+    position: relative;
+  }
+  .range-input input {
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    top: -7px;
+    background: none;
+    pointer-events: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+  }
+  .range-input input::-webkit-slider-thumb {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    border: 3px solid #1b53c0;
+    background-color: #fff;
+    pointer-events: auto;
+    -webkit-appearance: none;
+  }
+  .range-input input::-moz-range-thumb {
+    height: 15px;
+    width: 15px;
+    border-radius: 50%;
+    border: 3px solid #1b53c0;
+    background-color: #fff;
+    pointer-events: auto;
+    -moz-appearance: none;
+  }
+ */
+
+
+datalist {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    writing-mode: horizontal-tb;
+    width: 98.5%;
+  }
+  
+  option {
+    padding: 0;
+  }
+
+  .shapeContainer{
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+  }
+  .imgContainer{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  img{
+    width: 50%;
+  }
+  
+
+
+
+
+
+  section.range-slider {
+    position: relative;
+    width: 90%;
+    height: 85px;
+    text-align: center;
+}
+
+section.range-slider input {
+    pointer-events: none;
+    position: absolute;
+    overflow: hidden;
+    left: 0;
+    top: 15px;
+    width: 100%;
+    outline: none;
+    height: 50px;
+    margin: 0;
+    padding: 0;
+}
+
+section.range-slider input::-webkit-slider-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 1;
+    outline: 0;
+}
+
+section.range-slider input::-moz-range-thumb {
+    pointer-events: all;
+    position: relative;
+    z-index: 10;
+    -moz-appearance: none;
+    width: 9px;
+}
+
+#directionLeft{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.rangeContainer{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.canv{
+  width: 250px;
+  height: 250px;
+}
+
+.shapes{
+  display: none;
+  filter: brightness(1.1);
+}
+
+.shapeNumberContainer{
+  width: 75%;
+}
+
+.shapeNumber{
+  width: 100%;
+}
