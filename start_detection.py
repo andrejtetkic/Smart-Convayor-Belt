@@ -15,10 +15,10 @@ def startDetection(shape_segments, color_ranges):
 
 def stopDetection():
     global process
-
-    process.terminate()
-    process.join()
-    print("Stopping detection")
+    if process is not None:
+        process.terminate()
+        process.join()
+        print("Stopping detection")
 
 
 
