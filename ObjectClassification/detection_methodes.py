@@ -15,10 +15,16 @@ def shapes(img, threshold_value, aprox_poly):
     contours, _ = cv2.findContours( 
         threshold, cv2.RETR_TREE, cv2.CHAIN_APPROX_SIMPLE) 
 
+    # Set the minimum and maximum contour lengths
+    min_length = 80
+    max_length = 500
+
+    # Filter contours using a lambda function
+    filtered_contours = list(filter(lambda cnt: min_length <= cv2.arcLength(cnt, True) <= max_length, contours))
 
     # list for storing names of shapes 
     try:
-        contour = max(contours, key=cv2.contourArea)
+        contour = max(filtered_contours, key=cv2.contourArea)
     except:
         return None, 0
 

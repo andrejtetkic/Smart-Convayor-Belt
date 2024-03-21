@@ -5,14 +5,15 @@ import numpy as np
 from ..ServoControls import servo 
 
 
-def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[tuple], cap: cv2.VideoCapture) -> int:
+def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[tuple]) -> int:
     """
     This function is used to classify the shapes and colors of the object in the frame and return the choice index.
     :param shape_segments: list of the number of segments in the shape; type [int, int, int]
     :param color_ranges: list of the ranges of the colors in HSV hue spectre; type [(int, int), (int, int), (int, int)]
-    :param cap: the video capture object
     :return: the index of the shape and color mached
     """
+
+    cap = cv2.VideoCapture(0)
 
     ret, frame = cap.read()
     black_image = np.zeros((frame.shape[0], frame.shape[1]), dtype=np.uint8)
@@ -43,7 +44,7 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
                     if count_rect[0][0] <= x <= count_rect[1][0] and count_rect[0][1] <= y <= count_rect[1][1] and not in_last:
                         utilities.predictionHandler(i)
 
-                        count[i] += 1
+                       # count[i] += 1
                         utilities.printState(count)
                         in_last = True
                         break
