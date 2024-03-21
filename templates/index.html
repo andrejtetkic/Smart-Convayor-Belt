@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="settings">
-            <span id="counterAll">Ukupan broj <br><span id="largeNum">155</span></span>
+            <span id="counterAll">Ukupan broj <br><span id="largeNum"></span></span>
             <div class="sortingSettings">
                 <button type="button">Boje i oblik</button>
                 <button type="button">Model</button>
@@ -23,7 +23,7 @@
         <div class="conveyor">
             <div class="direction" id="directionLeft">
                 <h1>Levo</h1>
-                <span class="counter" id="counterLeft">50</span>
+                <span class="counter" id="counterLeft"></span>
                 
                 <div class="rangeContainer">
                     <span>Boja</span>
@@ -50,7 +50,7 @@
             </div>
             <div class="direction" id="directionStraight">
                 <h1>Pravo</h1>
-                <span class="counter" id="counterStraight">95</span>
+                <span class="counter" id="counterStraight"></span>
                 <div class="rangeContainer">
                     <section class="range-slider">
                         <span class="rangeValues"></span>
@@ -61,8 +61,8 @@
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
                     <div class="shapeNumContainer">
-                    <input type="range" class="shapeNumber" list="markers1" id="shapeStraight" step="1" min="3" max="6" value="5" onchange="getSides(1)"><!-- nek bude do 6 -->
-                        <datalist id="markers1">
+                    <input type="range" class="shapeNumber" list="markers2" id="shapeStraight" step="1" min="3" max="6" value="5" onchange="getSides(1)"><!-- nek bude do 6 -->
+                        <datalist id="markers2">
                             <option value="0" label="3"></option>
                             <option value="33" label="4"></option>
                             <option value="66" label="5"></option>
@@ -74,7 +74,7 @@
             </div>
             <div class="direction" id="directionRight">
                 <h1>Desno</h1>
-                <span class="counter" id="counterRight">10</span>
+                <span class="counter" id="counterRight"></span>
                 <div class="rangeContainer">
                     <section class="range-slider">
                         <span class="rangeValues"></span>
@@ -85,8 +85,8 @@
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
                     <div class="shapeNumContainer">
-                    <input type="range" class="shapeNumber" list="markers1" id="shapeStraight" step="1" min="3" max="6" value="5" onchange="getSides(2)"><!-- nek bude do 6 -->
-                        <datalist id="markers1">
+                    <input type="range" class="shapeNumber" list="markers3" id="shapeStraight" step="1" min="3" max="6" value="5" onchange="getSides(2)"><!-- nek bude do 6 -->
+                        <datalist id="markers3">
                             <option value="0" label="3"></option>
                             <option value="33" label="4"></option>
                             <option value="66" label="5"></option>

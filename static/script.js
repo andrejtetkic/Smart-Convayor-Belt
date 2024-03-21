@@ -54,10 +54,10 @@ function drawShape(x, y, r, sides) {
       // reset the translate position
       ctx.resetTransform();
     }
-function getHue(){
+function getHue(slidernum){
   var slides = document.getElementsByClassName("slider");
-  var slide1 = parseFloat(slides[0].value); // Use parseFloat to convert slider value to a number
-  var slide2 = parseFloat(slides[1].value); // Use parseFloat to convert slider value to a number
+  var slide1 = parseFloat(slides[0+slidernum*3].value); // Use parseFloat to convert slider value to a number
+  var slide2 = parseFloat(slides[1 +slidernum*3].value); // Use parseFloat to convert slider value to a number
   console.log(slide1 + " " + slide2);
   return (slide1 + slide2) / 2;
 }
@@ -78,20 +78,54 @@ function getSides(slidernum){
   switch(parseInt(sliders[slidernum].value)){
     case 3:
       shapes[0+slidernum*4].style.display = "block";
-      shapes[0+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg) brightness(100%)";
+      shapes[0+slidernum*4].style.filter = "hue-rotate("+getHue(slidernum)+"deg) brightness(100%)";
       break;
     case 4:
       shapes[1+slidernum*4].style.display = "block";
-      shapes[1+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[1+slidernum*4].style.filter = "hue-rotate("+getHue(slidernum)+"deg)";
       break;
     case 5:
       shapes[2+slidernum*4].style.display = "block";
-      shapes[2+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[2+slidernum*4].style.filter = "hue-rotate("+getHue(slidernum)+"deg)";
       break;
     case 6:
       shapes[3+slidernum*4].style.display = "block";
-      shapes[3+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[3+slidernum*4].style.filter = "hue-rotate("+getHue(slidernum)+"deg)";
       break;
     
   }
 }
+
+function getCounter(){
+  const numElements = [];
+  for(var i = 0; i < 3; i++){
+    numElements[i] = document.getElementsByClassName("counter")[i];
+  }
+  const room_url = {{ url_for("room_detail", id=room.id)|tojson }}
+fetch("/objectClassification/Logger/logcount.json")
+    .then((response) => response.json())
+    .then((json) => {
+        // Extract data from the JSON object
+        numElements[0].innerHTML = json[0];
+        numElements[1].innerHTML = json[1];
+        numElements[2].innerHTML = json[2];
+        document.getElementById("largeNum").innerHTML = json[0]+json[1]+json[2];
+    })
+    .catch((error) => {
+        console.error("Error reading JSON file:", error);
+    });
+  }
+function getConveyorVal(){
+  const numElements = [];
+  var counterArr = [0, 0, 0];
+  for(var i = 0; i < 3; i++){
+    numElements[i] = document.getElementsByClassName("counter")[i];
+  }
+  getCounter();
+  console.log(counterArr[0]);
+  for(var i = 0; i < 3; i++){
+    console.log(counterArr[i]);
+  }
+}
+
+getConveyorVal();
