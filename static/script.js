@@ -62,33 +62,35 @@ function getHue(){
   return (slide1 + slide2) / 2;
 }
 
-function removeShapes(){
+function removeShapes(slidernum){
   var shapes = document.getElementsByClassName("shapes");
-  for(var i = 0; i < shapes.length; i++){
+  console.log(shapes)
+  for(var i = slidernum*4; i < i+3; i++){
     shapes[i].style.display = "none";
   }
 }
-function getSides(){
-  /* console.log(getHue()); */
-  var slider1 = document.getElementById("shapeLeft").value;
+function getSides(slidernum){
+  var sliders = document.getElementsByClassName("shapeNumber");
   var shapes = document.getElementsByClassName("shapes");
-  removeShapes();
-  switch(parseInt(slider1)){
+  console.log(shapes.length);
+  console.log(sliders.length);
+  removeShapes(slidernum);
+  switch(parseInt(sliders[slidernum].value)){
     case 3:
-      shapes[0].style.display = "block";
-      shapes[0].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[0+slidernum*4].style.display = "block";
+      shapes[0+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 4:
-      shapes[1].style.display = "block";
-      shapes[1].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[1+slidernum*4].style.display = "block";
+      shapes[1+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 5:
-      shapes[2].style.display = "block";
-      shapes[2].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[2+slidernum*4].style.display = "block";
+      shapes[2+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 6:
-      shapes[3].style.display = "block";
-      shapes[3].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[3+slidernum*4].style.display = "block";
+      shapes[3+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     
   }

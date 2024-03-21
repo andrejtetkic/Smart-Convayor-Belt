@@ -209,6 +209,7 @@ datalist {
   .shapeContainer{
     display: flex;
     flex-direction: column;
+    width: 80%;
   }
   .imgContainer{
     display: flex;
@@ -281,4 +282,8 @@ section.range-slider input::-moz-range-thumb {
 
 .shapeNumberContainer{
   width: 75%;
+}
+
+.shapeNumber{
+  width: 100%;
 }

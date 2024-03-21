@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="settings">
-            <span id="counterAll">Ukupan broj <br></broj:br><span id="largeNum">155</span></span>
+            <span id="counterAll">Ukupan broj <br><span id="largeNum">155</span></span>
             <div class="sortingSettings">
                 <button type="button">Boje i oblik</button>
                 <button type="button">Model</button>
@@ -28,14 +28,14 @@
                 <div class="rangeContainer">
                     <section class="range-slider">
                         <span class="rangeValues"></span>
-                        <input value="5" min="0" max="360" step="1" type="range" class="slider">
-                        <input value="10" min="0" max="360" step="1" type="range" class="slider">
+                        <input value="5" min="0" max="360" step="1" type="range" class="slider" onchange="getSides(0)">
+                        <input value="10" min="0" max="360" step="1" type="range" class="slider" onchange="getSides(0)">
                     </section>
                 </div>
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
                     <div class="shapeNumContainer">
-                    <input type="range" class="shapeNumber" list="markers1" id="shapeLeft" step="1" min="3" max="6" value="5" onchange="getSides()"><!-- nek bude do 6 -->
+                    <input type="range" class="shapeNumber" list="markers1" id="shapeLeft" step="1" min="3" max="6" value="5" onchange="getSides(0)"><!-- nek bude do 6 -->
                         <datalist id="markers1">
                             <option value="0" label="3"></option>
                             <option value="33" label="4"></option>
@@ -51,19 +51,24 @@
                 <h1>Pravo</h1>
                 <span class="counter" id="counterStraight">95</span>
                 <div class="rangeContainer">
-                    <input type="range" min="0" max="360" name="colorRange" id="colR" class="slider">
+                    <section class="range-slider">
+                        <span class="rangeValues"></span>
+                        <input value="5" min="0" max="360" step="1" type="range" class="slider" onchange="getSides(1)">
+                        <input value="10" min="0" max="360" step="1" type="range" class="slider" onchange="getSides(1)">
+                    </section>
                 </div>
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
-                    <input type="range" class="shapeNumber" list="markers2">
-                    <datalist id="markers2">
-                        <option value="0" label="3"></option>
-                        <option value="25" label="4"></option>
-                        <option value="50" label="5"></option>
-                        <option value="75" label="6"></option>
-                        <option value="100" label="7"></option>
-                    </datalist>
-                    <div class="imgContainer"><canvas class="canv"></canvas></div>
+                    <div class="shapeNumContainer">
+                    <input type="range" class="shapeNumber" list="markers1" id="shapeStraight" step="1" min="3" max="6" value="5" onchange="getSides(1)"><!-- nek bude do 6 -->
+                        <datalist id="markers1">
+                            <option value="0" label="3"></option>
+                            <option value="33" label="4"></option>
+                            <option value="66" label="5"></option>
+                            <option value="100" label="6"></option>
+                        </datalist>
+                    </div>
+                    <div class="imgContainer"><img src="/static/pics/3side.png" class="shapes" ><img src="/static/pics/4side.png" class="shapes"><img src="/static/pics/5side.png" class="shapes"><img src="/static/pics/6side.png" class="shapes" id="hexagon"></div>
                 </div>
             </div>
             <div class="direction" id="directionRight">
