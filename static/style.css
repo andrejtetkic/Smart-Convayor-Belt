@@ -277,5 +277,8 @@ section.range-slider input::-moz-range-thumb {
 
 .shapes{
   display: none;
-  filter: hue-rotate(45deg);
+}
+
+.shapeNumberContainer{
+  width: 75%;
 }

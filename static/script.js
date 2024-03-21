@@ -3,8 +3,8 @@ function getVals(){
     // Get slider values
     var parent = this.parentNode;
     var slides = parent.getElementsByTagName("input");
-      var slide1 = ( slides[0].value );
-      var slide2 = ( slides[1].value );
+      var slide1 = parseFloat( slides[0].value );
+      var slide2 = parseFloat( slides[1].value );
       console.log(slide1 + " " + slide2);
     // Neither slider will clip the other, so make sure we determine which is larger
     if( slide1 > slide2 ){ var tmp = slide2; slide2 = slide1; slide1 = tmp; }
@@ -55,9 +55,9 @@ function drawShape(x, y, r, sides) {
       ctx.resetTransform();
     }
 function getHue(){
-  var slides = document.getElementsByTagName("input");
-  var slide1 = (slides[0].value); // Use parseFloat to convert slider value to a number
-  var slide2 = (slides[1].value); // Use parseFloat to convert slider value to a number
+  var slides = document.getElementsByClassName("slider");
+  var slide1 = parseFloat(slides[0].value); // Use parseFloat to convert slider value to a number
+  var slide2 = parseFloat(slides[1].value); // Use parseFloat to convert slider value to a number
   console.log(slide1 + " " + slide2);
   return (slide1 + slide2) / 2;
 }
@@ -76,16 +76,19 @@ function getSides(){
   switch(parseInt(slider1)){
     case 3:
       shapes[0].style.display = "block";
-      shapes[0].style.filter = hueRotate("180deg");
+      shapes[0].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 4:
       shapes[1].style.display = "block";
+      shapes[1].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 5:
       shapes[2].style.display = "block";
+      shapes[2].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     case 6:
       shapes[3].style.display = "block";
+      shapes[3].style.filter = "hue-rotate("+getHue()+"deg)";
       break;
     
   }

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/static/style.css">
-    <script type="module" src="/templates/script.js" defer></script>
+    <script src="/static/script.js" defer></script>
     <title>Pokretna traka</title>
 </head>
 <body>
@@ -34,13 +34,16 @@
                 </div>
                 <div class="shapeContainer">
                     <span>Broj stranica</span>
+                    <div class="shapeNumContainer">
                     <input type="range" class="shapeNumber" list="markers1" id="shapeLeft" step="1" min="3" max="6" value="5" onchange="getSides()"><!-- nek bude do 6 -->
-                    <datalist id="markers1">
-                        <option value="0" label="3"></option>
-                        <option value="33" label="4"></option>
-                        <option value="66" label="5"></option>
-                        <option value="100" label="6"></option>
-                    </datalist>
+                        <datalist id="markers1">
+                            <option value="0" label="3"></option>
+                            <option value="33" label="4"></option>
+                            <option value="66" label="5"></option>
+                            <option value="100" label="6"></option>
+                        </datalist>
+                    </div>
+                    
                     <div class="imgContainer"><img src="/static/pics/3side.png" class="shapes" id="triangleLeft"><img src="/static/pics/4side.png" class="shapes" id="rectangleLeft1"><img src="/static/pics/5side.png" class="shapes" id="pentagon"><img src="/static/pics/6side.png" class="shapes" id="hexagon"></div>
                 </div>
             </div>
@@ -85,8 +88,8 @@
         </div>
     </div>
     </div>
-    <div class="container">
-        <!-- Double slider(not working as intended) -->
+    <!-- <div class="container">
+         Double slider(not working as intended)
         <div class="range">
             <div class="range-slider">
                 <span class="range-selected"></span>
@@ -101,6 +104,6 @@
             <input value="5" min="0" max="15" step="0.5" type="range" class="slider">
             <input value="10" min="0" max="15" step="0.5" type="range" class="slider">
         </section>
-    </div>
+    </div> -->
 </body>
 </html>
