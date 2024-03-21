@@ -1,5 +1,6 @@
 *{
     margin: 0;
+    box-sizing: border-box;
 }
 
 #largeNum{
@@ -51,7 +52,8 @@ span.counter{
   text-shadow: 1px 1px 1px #000;
 }
 .conveyor .direction .counter{
-    font-size: 25px;
+    font-size: 50px;
+    margin: 5px;
 }
 
 .wrapper .settings .sortingSettings{
@@ -107,6 +109,7 @@ span.counter{
 .rangeContainer{
     width: 100%;
     text-align: center;
+    padding: 10px;
 }
 
 .slider{
@@ -278,6 +281,7 @@ section.range-slider input::-moz-range-thumb {
 
 .shapes{
   display: none;
+  filter: brightness(1.1);
 }
 
 .shapeNumberContainer{

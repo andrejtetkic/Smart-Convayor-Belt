@@ -64,8 +64,8 @@ function getHue(){
 
 function removeShapes(slidernum){
   var shapes = document.getElementsByClassName("shapes");
-  console.log(shapes)
-  for(var i = slidernum*4; i < i+3; i++){
+  console.log(shapes);
+  for(var i = slidernum*4; i < slidernum*4 + 4 ; i++){
     shapes[i].style.display = "none";
   }
 }
@@ -78,7 +78,7 @@ function getSides(slidernum){
   switch(parseInt(sliders[slidernum].value)){
     case 3:
       shapes[0+slidernum*4].style.display = "block";
-      shapes[0+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg)";
+      shapes[0+slidernum*4].style.filter = "hue-rotate("+getHue()+"deg) brightness(100%)";
       break;
     case 4:
       shapes[1+slidernum*4].style.display = "block";
