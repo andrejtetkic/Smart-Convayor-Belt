@@ -1,3 +1,4 @@
+import os
 from flask import *
 from distutils.log import debug 
 from fileinput import filename 
@@ -15,6 +16,9 @@ def success():
         f.save(f.filename)
         #render_template('index.html', name = f.filename)
         return "file uploaded successfully"
+@app.route('/ObjectClassification/Logger/logcount.json')
+def logcount():
+    return render_template('logcount.json')
 
 if __name__=='__main__':
     app.run(host = '0.0.0.0', port=80, debug = True)

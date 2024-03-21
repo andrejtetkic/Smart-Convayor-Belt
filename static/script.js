@@ -101,8 +101,7 @@ function getCounter(){
   for(var i = 0; i < 3; i++){
     numElements[i] = document.getElementsByClassName("counter")[i];
   }
-  const room_url = {{ url_for("room_detail", id=room.id)|tojson }}
-fetch("/objectClassification/Logger/logcount.json")
+fetch("ObjectClassification/Logger/logcount.json")
     .then((response) => response.json())
     .then((json) => {
         // Extract data from the JSON object
