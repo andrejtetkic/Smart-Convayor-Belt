@@ -1,15 +1,14 @@
 from multiprocessing import Process
 from .ObjectClassification.object_detection import RGB_and_Sides_classification
-import cv2
 
 process = None
 
 def startDetection(shape_segments, color_ranges):
     global process
 
-    cap = cv2.VideoCapture(0)
+    # cap = cv2.VideoCapture(0) Add this to the start of RGB_and_Sides_classification
 
-    process = Process(target=RGB_and_Sides_classification, args=(shape_segments, color_ranges, cap))
+    process = Process(target=RGB_and_Sides_classification, args=(shape_segments, color_ranges))
     process.start()
     print("Starting detection")
 
