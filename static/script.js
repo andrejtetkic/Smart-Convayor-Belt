@@ -128,3 +128,6 @@ function getConveyorVal(){
 }
 
 getConveyorVal();
+getSides(0);
+getSides(1);
+getSides(2);

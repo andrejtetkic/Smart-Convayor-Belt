@@ -10,7 +10,7 @@
 <body>
     <div class="wrapper">
         <div class="settings">
-            <span id="counterAll">Ukupan broj <br><span id="largeNum"></span></span>
+            <span id="counterAll">Ukupan broj <br><span id="largeNum">{{dataAll}}</span></span>
             <div class="sortingSettings">
                 <button type="button">Boje i oblik</button>
                 <button type="button">Model</button>
@@ -23,8 +23,7 @@
         <div class="conveyor">
             <div class="direction" id="directionLeft">
                 <h1>Levo</h1>
-                <span class="counter" id="counterLeft"></span>
-                
+                <span class="counter" id="counterLeft">{{data1}}</span>
                 <div class="rangeContainer">
                     <span>Boja</span>
                     <section class="range-slider">
@@ -50,7 +49,7 @@
             </div>
             <div class="direction" id="directionStraight">
                 <h1>Pravo</h1>
-                <span class="counter" id="counterStraight"></span>
+                <span class="counter" id="counterStraight">{{data2}}</span>
                 <div class="rangeContainer">
                     <section class="range-slider">
                         <span class="rangeValues"></span>
@@ -73,8 +72,9 @@
                 </div>
             </div>
             <div class="direction" id="directionRight">
+                {{data}}
                 <h1>Desno</h1>
-                <span class="counter" id="counterRight"></span>
+                <span class="counter" id="counterRight">{{data3}}</span>
                 <div class="rangeContainer">
                     <section class="range-slider">
                         <span class="rangeValues"></span>
