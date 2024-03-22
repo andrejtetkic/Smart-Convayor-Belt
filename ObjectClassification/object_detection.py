@@ -15,6 +15,7 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
 
     cap = cv2.VideoCapture(0)
 
+    count = [0, 0, 0]
     ret, frame = cap.read()
     black_image = np.zeros((frame.shape[0], frame.shape[1]), dtype=np.uint8)
 
@@ -44,7 +45,7 @@ def RGB_and_Sides_classification(shape_segments: list[int], color_ranges: list[t
                     if count_rect[0][0] <= x <= count_rect[1][0] and count_rect[0][1] <= y <= count_rect[1][1] and not in_last:
                         utilities.predictionHandler(i)
 
-                       # count[i] += 1
+                        count[i] += 1
                         utilities.printState(count)
                         in_last = True
                         break
