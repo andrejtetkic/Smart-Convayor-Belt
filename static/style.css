@@ -237,3 +237,7 @@ section.range-slider input::-moz-range-thumb {
 .shapeNumber{
   width: 100%;
 }
+
+#save{
+  background-color: rgb(96, 182, 96);
+}
